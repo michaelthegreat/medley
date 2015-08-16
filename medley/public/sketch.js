@@ -1,4 +1,5 @@
-var sketch = function( p ) {
+
+/*var sketch = function( p ) {
 
   var gray = 0; 
 
@@ -17,7 +18,7 @@ var sketch = function( p ) {
   
 };
   var myp5 = new p5(sketch, 'canvass');
-  myp5.parent('canvass');
+  myp5.parent('canvass');*/
 /*
        
 function setup() {   
@@ -40,18 +41,24 @@ function draw()
 }
 
 */
-/*
+var canvas;
 function setup() {  
-  createCanvas(600, 400);
-
+  canvas = createCanvas(600, 400);
+  
   
 }
-
+var firstpass = true;
 function draw() {
+
+  if(firstpass && document.getElementById("canvass")!= null)
+  { 
+    canvas.parent("canvass");
+    firstpass = false;
+  }
   if (mouseIsPressed) {
     fill(0);
   } else {
     fill(255);
   }
   ellipse(mouseX, mouseY, 80, 80);
-}*/
+}
